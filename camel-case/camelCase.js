@@ -8,7 +8,19 @@
 */
 
 const camelCase = (string) => {
-
+  let spaced = '';
+  for (let i = 0; i < string.length; i++) {
+    if (string[i] === string[i].toLowerCase()) {
+      spaced += string[i];
+    }
+    else {
+      spaced += (' ' + string[i]);
+    }
+  }
+  if (spaced[0] === ' ') {
+    return spaced.slice(1);
+  }
+  return spaced;
 };
 
 //Do not change this line or the function name

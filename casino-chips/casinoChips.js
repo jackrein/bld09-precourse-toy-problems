@@ -13,7 +13,12 @@
 */
 
 const casinoChips = (chips) => {
-
+  let bets = 0;
+  let [r, u, k] = chips.sort((a,b) => a-b);
+  if (u < 1) {
+    return bets;
+  }
+  return 1 + casinoChips([r, u-1, k-1]);
 };
 
 //Do not change this line or the function name

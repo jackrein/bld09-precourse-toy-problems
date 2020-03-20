@@ -16,7 +16,23 @@
 */
 
 const maxProfit = (array) => {
-
+  // given array of stock prices indexed on day
+  array.reverse();
+  // create result value
+  let profit = 0;
+  // find the highest num that's after the lowest num
+    // find the largest difference between 2 nums in ordered array
+      console.log(array);
+  for (let i = 0; i < array.length; i++) {
+    for (let j = 0; j < array.length; j++) {
+      if ((array[i] - array[j]) > profit && j > i) {
+        profit = array[i] - array[j];
+      }
+      console.log(array[i], array[j], profit);
+    }
+  }
+  // return result value
+  return profit;
 };
 
 //Do not change this line or the function name

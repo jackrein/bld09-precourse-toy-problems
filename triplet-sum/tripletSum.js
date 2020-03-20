@@ -7,7 +7,17 @@
 */
 
 const tripletSum = (array) => {
-
+  let integers = [];
+  for (let i = 0; i < array.length; i++) {
+    if (integers.includes(array[i])) {
+      continue;
+    }
+    else {
+      integers.push(array[i]);
+    }
+  }
+  integers.sort(function(a, b){return a-b});
+  return (integers[integers.length-1] + integers[integers.length-2] + integers[integers.length-3]);
 };
 
 //Do not change this line or the function name

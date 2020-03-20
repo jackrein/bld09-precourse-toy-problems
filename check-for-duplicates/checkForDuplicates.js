@@ -9,7 +9,16 @@
 */
 
 const checkForDuplicates = (array) => {
-
+  let result = [];
+  for (let i = 0; i < array.length; i++) {
+    if (result.includes(array[i])) {
+      continue;
+    }
+    else {
+      result.push(array[i]);
+    }
+  }
+  return result.length !== array.length;
 };
 
 // Do not change this line or the function name

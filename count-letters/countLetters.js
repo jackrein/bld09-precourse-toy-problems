@@ -10,7 +10,25 @@
 
 
 const countLetters = (string) => {
-
+  let letter = /[^0-\9 | S]/g;
+  let letters = string.toLowerCase().match(letter);
+  if (letters === null) {
+  	return '';
+  }
+  let obj = {};
+  let counts = '';
+  for (let i = 0; i < letters.length; i++) {
+    if (obj[letters[i]] === undefined) {
+      obj[letters[i]] = 1;
+    }
+    else {
+      obj[letters[i]] += 1;
+    } 
+  }  
+  for (let items in obj) {
+    counts += (items + ':' + obj[items] + ' ');
+  }
+  return counts.slice(0, counts.length -1);
 };
 
 //Do not change this line or the function name

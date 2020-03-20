@@ -8,7 +8,15 @@
 */
 
 const rotateMatrix = (matrix) => {
-
+  let copy = matrix.slice();
+    for (let i = 0; i < matrix.length; i++) {
+      // Map each row entry to its rotated value
+      let row = matrix[i].map(function(x, j) {
+        return copy[(matrix.length - 1) - j][i];
+      });
+      matrix[i] = row;
+    }
+  return matrix;
 };
 
 //Do not change this line or function name

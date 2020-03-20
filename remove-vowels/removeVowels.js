@@ -7,7 +7,15 @@
 */
 
 const removeVowels = (string) => {
-
+  let consonants = '';
+  let vowels = 'aeiouyAEIOUY';
+  for (let i = 0; i < string.length; i++) {
+    if (vowels.includes(string[i])) {
+      continue;
+    }
+    consonants += string[i];
+  }
+  return consonants;
 };
 
 //Do not change this line or the function name

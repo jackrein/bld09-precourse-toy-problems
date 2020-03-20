@@ -45,7 +45,16 @@ const salesTeam = {
 };
 
 const totalSales = (team) => {
-
+  let sum = 0;
+  Object.keys(team).forEach(function(key) {
+    if (typeof team[key] === 'number') {
+      sum += team[key];
+    }
+    if (typeof team[key] === 'object') {
+      sum += totalSales(team[key]);
+    }
+  })
+  return sum;
 };
 
 //Do not change this line, the function name, or salesTeam object!

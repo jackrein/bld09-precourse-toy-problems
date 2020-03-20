@@ -31,7 +31,7 @@ const oddInteger = (array) => {
   if (odds.length === 1) {
     return Number(odds);
   }
-  return odds.sort(function(a, b){return a-b});
+  return odds.sort((a,b) => a-b);
 };
 
 //Do not change this line or the function name

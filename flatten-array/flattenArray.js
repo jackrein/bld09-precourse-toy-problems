@@ -7,7 +7,16 @@
 */
 
 const flattenArray = (array) => {
-
+  let flat = [];
+  array.forEach(elem => {
+    if (Array.isArray(elem)) {
+      flat.push(...flattenArray(elem));
+    }
+    else {
+      flat.push(elem);
+    }
+  })
+  return flat;
 };
 
 //Do not change this line or the function name

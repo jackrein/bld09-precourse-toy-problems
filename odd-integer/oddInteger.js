@@ -12,7 +12,26 @@
 */
 
 const oddInteger = (array) => {
-
+  let counts = {};
+  for (let i = 0; i < array.length; i++) {
+    let num = array[i];
+    if (counts[num] === undefined) {
+      counts[num] = 1;
+    }
+    else {
+      counts[num]++;
+    }
+  }
+  let odds = [];
+  for (let int in counts) {
+    if (counts[int] % 2 === 1) {
+      odds.push(Number(int));
+    }
+  }
+  if (odds.length === 1) {
+    return Number(odds);
+  }
+  return odds.sort(function(a, b){return a-b});
 };
 
 //Do not change this line or the function name
